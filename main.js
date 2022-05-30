@@ -17,7 +17,23 @@ function invalidInputClasses(input) {
   input.classList.add("border-red-500");
   input.classList.remove("border-green-500");
 }
-
+function successAlert() {
+  Swal.fire({
+    position: "absolute",
+    icon: "success",
+    title: "Campos Válidos",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+}
+function errorAlert() {
+  Swal.fire({
+    position: "absolute",
+    icon: "error",
+    title: "Oops...",
+    text: "Verifique os campos",
+  });
+}
 //Listeners
 inputPasswordEl.addEventListener("input", (e) => {
   let totalCaracteres = e.target.value.length;
@@ -60,19 +76,8 @@ formLogin.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if (validPassword && validUsername) {
-    Swal.fire({
-      position: "absolute",
-      icon: "success",
-      title: "Campos Válidos",
-      showConfirmButton: false,
-      timer: 1500,
-    });
+    successAlert();
   } else {
-    Swal.fire({
-      position: "absolute",
-      icon: "error",
-      title: "Oops...",
-      text: "Verifique os campos",
-    });
+    errorAlert();
   }
 });
