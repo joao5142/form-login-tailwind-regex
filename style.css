@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0px;
+  width: calc(40px + 100vw);
+  height: calc(20px + 100vh);
+  background: url("https://wallpaper.dog/large/5448919.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: blur(20px);
+}
