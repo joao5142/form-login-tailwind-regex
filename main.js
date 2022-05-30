@@ -45,12 +45,12 @@ inputPasswordEl.addEventListener("input", (e) => {
   if (totalCaracteres >= 10) {
     validInputClasses(inputPasswordEl);
     textErrorPassword.innerHTML = "";
-    validPassword += true;
+    validPassword = true;
   } else {
     invalidInputClasses(inputPasswordEl);
     textErrorPassword.innerHTML =
       "Please choose a valid password (min length 10)";
-    validPassword += false;
+    validPassword = false;
   }
 });
 
@@ -64,7 +64,7 @@ inputUsernameEl.addEventListener("input", (e) => {
   if (regex.test(username) || regex2.test(username)) {
     validInputClasses(inputUsernameEl);
     textErrorUsername.innerHTML = "";
-    validUsername += true;
+    validUsername = true;
   } else {
     invalidInputClasses(inputUsernameEl);
     textErrorUsername.innerHTML = "Please choose a valid username";
